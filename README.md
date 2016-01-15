@@ -1,4 +1,0 @@
-OrdDiff
-=======
-
-Gewöhnliche Differentialgleichungen

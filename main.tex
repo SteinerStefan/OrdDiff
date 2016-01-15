@@ -1,0 +1,39 @@
+\documentclass[a4paper, 10pt]{scrartcl}
+
+\title{MSE OrdDiff}
+\subtitle{Formulary}
+\author{ssteiner}
+\date{\today}
+\input{sections/header}
+
+\definecolor{darkgreen}{RGB}{0,100,0}
+\definecolor{lightgray}{gray}{0.9}
+
+\renewcommand{\arraystretch}{1.2}
+
+\newcommand{\dx}{\hspace{2pt}dx}
+\newcommand{\dd}[1]{\hspace{2pt}d#1}
+\newcommand{\laplace}{\Delta}
+\newcommand{\qed}{\begin{flushright}
+		$\blacksquare \dagger$ \end{flushright}}
+%vektor
+\newcommand{\ve}[1]{\textbf{#1}}
+
+\begin{document}
+	\maketitle 
+
+	\setlength{\parskip}{0cm}
+	\setcounter{tocdepth}{1}	
+
+	\tableofcontents 	
+	
+	\smallskip 
+	\rule{\textwidth}{0.5pt}
+	\smallskip
+	\keepXColumns %ltablex
+	\input{sections/modellbilldung}
+	\input{sections/ordDiff_univariat}
+	\input{sections/systeme}
+	\newpage
+	\input{sections/beispiele}
+\end{document}

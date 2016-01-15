@@ -1,0 +1,101 @@
+\section{Gewöhnliche Differentialgleichung}
+\renewcommand{\arraystretch}{2.5}
+\begin{tabularx}{\columnwidth}{p{2.8cm}XX}
+	 \hline 
+	\multicolumn{3}{c}{\textbf{Analytische Verfahren}}\\
+	
+	\hline 
+	\multicolumn{3}{c}{DGL 1. Ordnung}\\
+	\hdashline
+	Separierbare DGL & 
+	$\begin{cases} y' &=g(x)h(y) \quad  h(y_0)\neq 0\\ y(x_0) &= y_0  \end{cases}$ & 
+	$\int\limits_{y_0}^y \dfrac{1}{h(\tilde y)}d\tilde y = \int\limits_{x_0}^x g(\tilde x)d\tilde x$\\
+ 
+	\hdashline
+	Substitution  & $y' = A\left(\dfrac{y}{x}\right) = A(u) \quad u(x) = \dfrac{y}{x}$ & Rücksubstitution $y = x\cdot u(x)$\\
+	\hdashline
+	Lineare DGL & $y' = f(x)\cdot y + g(x) \qquad  y = y_h + y_s$ & $y_h$: homogene Lösung \newline $y_s$: partikuläre Lösung\\
+	
+	Linearität & \multicolumn{2}{p{13cm}}{Eine Linearkombination von verschiedenen Störfunktionen führt auf einen Ansatz entsprechender Linearkombinationen}\\
+	Resonanz & \multicolumn{2}{p{13cm}}{Wenn die Störfunktion eine Lösung der homogenen DGL ist muss der \textbf{Ansatz mit $x$ multipliziert} werden}\\
+	
+	\textbf{Homogene $\mathbb{L}$} & $y_h = K\cdot e^{F(x)} \qquad F(x) = \int f(x)dx$ & \\
+	\multicolumn{3}{c}{\textbf{Partikuläre $\mathbb{L}$}}\\				
+	\cline{2-3}
+	Ansatz durch Einsetzen &  
+	Störfunktion g(x)\newline 
+	$a\;(\text{const})$\newline 
+	$a_0 + a_1x +\cdots +a_mx^m$\newline
+	$ae^{\lambda x}$\newline
+	$a\sin(mx)$\newline 
+	$b\cos(mx)$\newline 
+	$a\sin(mx) + b\cos(mx)$&
+	Ansatz für $y_s(x)$  \newline 
+	$b\;(\text{const})$ \newline 
+	$b_0 + b_1x + \cdots + b_mx^m$\newline 	
+	$be^{\lambda x}$\newline 			 
+	$c\sin(mx) + d\cos(mx)$\\
+	\cline{2-3}
+	Variation \newline der Konstanten & $y_p = K(x)\cdot e^{F(x)} \qquad F(x) = \int f(x)dx$ & $K(x) = \int g(x)e^{-F(x)}dx$\\
+	\hline
+	\multicolumn{3}{c}{DGL n-ter Ordnung}\\
+	\hdashline 
+	linear, konstante Koeffizienten & $a_n\cdot y'(n) + \cdots + a_1\cdot y' + a_0\cdot y = g(x)$  & $a_i$: konstante Koeffizienten, $a_n\neq 0$\\
+	Linearkombination & Jede Linearkombination von $\mathbb{L}$ ist wieder eine Lösung & $C_1y_1 + C_2 y_2 \in \mathbb L$\\
+	Anzahl Lösungen & n linear unabhängige Lösungen & \\
+	Homogene $\mathbb{L}$ & \multicolumn{2}{p{14cm}}{ $y = e^{\lambda x} \qquad P(\lambda) = \lambda^n +a_{n-1}\lambda^{n-1} + \cdots + a_1\lambda + a_0 = 0 \quad \lambda\in\mathbb{C}$}\\
+	
+	\multicolumn{3}{p{\columnwidth}}{$P(\lambda)$: m-fache reelle Nullstellen  $\lambda\in\mathbb{R} \qquad y_i=C_i x^{i-1}e^{\lambda x} \qquad  i=1, \dots,m$}\\
+	
+	\multicolumn{3}{p{\columnwidth}}{$P(\lambda)$: m-fache komlexe Nullstellen $\lambda\in\mathbb{C} \quad \lambda = \alpha\pm j\beta \qquad y_i = x^{i-1}e^{\alpha x}(C_i\cos\beta x + C_{m+i}\sin\beta x) \quad  i=1, \dots,m$} \\
+	Partikuläre $\mathbb{L}$& \multicolumn{2}{p{14cm}}{Einsetzen eines Ansatzes, der dieselbe Form wie die Störfunktion hat mit unbestimmten Parametern}\\
+	\hline 
+	\multicolumn{3}{c}{\textbf{Numerische Verfahren}}\\
+	\hdashline 
+	Grundbegriffe & $x_k$: Näherungswerte ($k\in \mathbb{N}$)& $t_k$: Stützstellen ($k\in \mathbb{N}$)\\
+	\hdashline
+	\multicolumn{3}{c}{Einschrittverfahren}\\
+	Schrittweite & $h = t_{k+1} - t_k$ (const.) & $t_k = t_0 + k\cdot h$\\
+	explizite Verfahren & $x_{k+1} = \Psi_f(t_k,x_k,h) = x_k + h\cdot \Phi_k(t_k,x_k,h)$& $\Phi_f(t_k,x_k,h) = \dfrac{\Psi_f(t_k,x_k,h) -x_k}{h}$\\
+	\hdashline 
+	Explizites Euler Verfahren ($p=1$) & $\begin{cases} t_{k+1} &= t_k+h \\ x_{k+1} &= x_k + h\cdot f(t_k,x_k)\end{cases}$ & 
+	$\Psi_f(t_k,x_k,h) = x_k + h\cdot f(t_k,x_k)$ \newline 
+	$\Phi_f (t_k,x_k,h) = f(t_k,x_k)$\\
+	\hdashline 
+	Mittelpunktsregel ($p=2$) & $\begin{cases} t_{k+1} &=t_k + h \\ x_{k+\frac{1}{2}} & = x_k + \frac{h}{2}\cdot f(t_k,x_k) \\ x_{k+1} &=x_k + h\cdot f(t_k+\frac{h}{2},x_{k+\frac{1}{2}})	\end{cases}$ & 
+	$\Phi_f(t_k,x_k,h) = f\left(t_k + \frac{h}{2}, x_k + \frac{h}{2}f(t_k,x_k)\right)$\\
+	\hdashline
+	Heun-Verfahren ($p=2$) & $\begin{cases}t_{k+1} &= t_k+h\\ m_1 &= f(t_k,x_k) \\ m_2 & = f(t_k+h,x_k+h\cdot m_1)\\ x_{k+1} &= x_k +\frac{h}{2}(m_1+m_2)\end{cases}$ &
+	$\Phi_f(t_k,x_k,h) = \dfrac{1}{2}(f(t_k,x_k) + f(t_{k+1},x_k +h\cdot f(t_k,x_k))$\\
+	\hdashline 
+	Klassisches Runge-Kutta-Verfahren ($p=4$)& 
+	$\begin{cases}t_{k+1} &= t_k + h\\ m_1 &= f(t_k,x_k)\\ m_2 &=f(t_k +\frac{h}{2},x_k + \frac{h}{2}m_1)\\ m_3 &=f(t_k +\frac{h}{2},x_k + \frac{h}{2}m_2)\\ m_4 &=f(t_k +h,x_k + h m_3)\\ x_{k+1} &= x_k + \dfrac{h}{6}(m_1 + 2m_2 + 2m_3 + m_4)\end{cases}$ & 
+	$\Phi_f = \dfrac{1}{6}(m_1 + 2m_2 + 2m_3 + m_4)$\\
+	\hdashline
+	Implizites Euler-Verfahren & $\begin{cases} t_{k+1} &= t_k + h\\ x_{k+1} &= x_k + h\cdot f(t_{k+1}, x_{k+1})\end{cases}$\\
+	\hline 
+	\multicolumn{3}{c}{Fehler und Fehlerordnung}\\
+	\hdashline 
+	Kategorien & \multicolumn{2}{p{13cm}}{
+	(1)   Datenfehler: Fehler bei Anfangsbedingungen $x_0 \neq x(t_0)$  \newline 
+	(2)  Diskretisierungsfehler: Fehler durch Approximationsverfahren\newline
+	(3) Rechenfehler: bei Durchführung des Algorithmus, Rundungseffekte}\\
+	\hdashline 
+	(1) Datenfehler & 
+	$|x^{(1)}(t) - x^{(2)}(t)| \leq e^{L(t-t_0) |x_1-x_2}$&
+	$f(t,x)$ erfüllt Lipschitz-Bedingung\newline $x^{(1)}(t),x^{(2)}(t)$, Lösungen\newline
+	$x_1,x_2$  Anfangsbedingungen\\
+	(2) Diskretisierungsfehler & lokaler Diskretisierungsfehler (LDE)  & $\tau_{k,h} = \dfrac{x(t_{k+1}) - x_h(t_{k+1};t_k,x(t_k))}{h}$\\
+	 &globale Diskretisierungsfehler (GDE)&
+	 $\max\limits_{0\leq k\leq n}|e_k| = \max\limits_{0\leq k\leq n}|x(t_k) - x_k|$\\
+	 (3) Rechenfehler & $\tilde x_{k+1} = \tilde x_k + h\cdot \Phi_f(t_k,\tilde x_k,h) + r_k$ & $r_k$: Rundungsfehler\\
+	 \hdashline
+	 Konsistenz & $|\tau_{k,h}| \leq Ch^p\qquad  (h\to 0)$ & $C$: Konstante $(C\in\mathbb{R})$\newline $p$: Ordnung Verfahren\\
+	 Konvergent & $\max\limits_{0\leq k\leq n} |e_k| \leq Ch^p \qquad (h\to 0)$ &\\
+	  & \multicolumn{2}{l}{Konsitenz der Ordnung p $\implies$ Konvergenz der Ordnung p}\\
+	 \hdashline 
+	 totaler Rechenfehler & \multicolumn{2}{l}{$\max\limits_{0\leq k\leq n} |\tilde{e}_k| = \left( \underbrace{|x(t_0) - x_0|}_{Fehler (1)} + \sum\limits_{k=0}^{n-1} (h\cdot \underbrace{|\tau_{k,h}|}_{Fehler (2)} +  \underbrace{|r_k|}_{Fehler (3)}   \right) e^{L(t_n-t_0)}$}\\
+	 \hline 
+\end{tabularx} 
+
+\renewcommand{\arraystretch}{2}
