@@ -1,0 +1,30 @@
+Schwingungen &
+ODE 2. Ordnung, konstante Koeffizienten: $m\ddot x(t) + d\dot x(t) + k x(t) = F(t)$\newline 
+mech. Schwingkreis: $\ddot x(t) + 2\delta \dot x (t) + \omega_0^2 x(t) = f(t) \qquad \delta = \frac{d}{2m},\; \omega_0^2 = \frac{k}{m}\geq 0,\; f(t) = \frac{F(t)}{m}$\\
+
+\cline{2-2}
+Freie ungedämpfte Schwingung &
+$f(t) =0, \delta = 0 \qquad $ 
+$\ddot x(t) + \omega_0^2 x(t) = 0$\newline 
+$\boxed{x(t) = C_1\cos(\omega_0 t) + C_2\sin(\omega_0 t)} \qquad \text{Eigenfrequenz}: \omega_0$ \\
+\cline{2-2}
+Freie gedämpfte Schwingung & 
+$\delta \neq 0, f(t) = 0 \qquad $
+$\ddot x(t) + 2\delta \dot x (t) + \omega_0^2 x(t) = 0 \qquad$
+$x(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t} \quad (C_1,C_2 \in \mathbb R)$\newline 
+$\lambda^2 + 2\delta\lambda + \omega_0^2 = 0 \quad $
+$\lambda_{1,2} = -\delta \pm \sqrt{\delta^2 -\omega_0^2} $\newline 
+$\boxed{x(t) = e^{-\delta t} \left( C_1\cos\left( \sqrt{\omega_0^2 - \delta^2}\cdot t\right)  + C_2\sin\left( \sqrt{\omega_0^2 - \delta^2}\cdot t\right)  \right)}$\\
+\cline{2-2}
+Erzwungene Schwingung & 
+$f(t) \neq 0,\quad \omega\in\mathbb{R} \quad $
+Harmonische Schwingung als Anregung: $f(t) = f_0\cdot e^{j\omega t} \quad f_0>0$\newline 
+$\ddot x(t) + 2\delta \dot x (t) + \omega_0^2 x(t) = f_0\cdot e^{j\omega t}\qquad $ Homogene $\mathbb{L}$ von Freier gedämpften Schwingung\newline
+Ansatz: $x_p(t) = A\cdot e^{j(\omega t - \phi)}\qquad $
+$-\omega^2 + 2\delta j \omega +\omega_0^2 = \dfrac{f_0}{A}e^{j\phi}$ Betrag L.H.S, Quadrieren  \newline 
+$(\omega_0^2 - \omega^2)^2 + 4\delta^2\omega^2 = \dfrac{f_0^2}{A^2} \qquad $
+Amplitude: $\boxed{A =  A(\omega) = \dfrac{f_0}{\sqrt{ (\omega_0^2 - \omega^2)^2 + 4\delta^2\omega^2 }}}$\newline 
+$\frac{dA}{d\omega} = 0 \rightarrow \omega_{max} = \sqrt{\omega_0^2 - 2\delta^2} \quad$
+$\delta = 0 \rightarrow A(\omega)\to\infty \text{ wenn } \omega \to \omega_0 $\newline
+$\eta = \frac{\omega}{\omega_0} \quad$ Lehrsche Dämpfung $D=\frac{\delta}{\omega_0}$ \\
+

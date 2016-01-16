@@ -1,0 +1,10 @@
+
+
+Lösung durch Substitution & 
+$y' = A\left(\dfrac{y}{x}\right) = A(u) \quad \text{subst.}\quad u(x) = \dfrac{y}{x} \quad u' = \dfrac{x\cdot y'-y\cdot1}{x^2} = \dfrac{y'-u}{x} $ \newline 
+$y' = x\cdot u' +u = A(u)  \quad u' = \dfrac{A(u)-u}{x} \quad \text{separierbar!}$ \newline 
+$\boxed{\int\dfrac{du}{A(u) - u} = \int \dfrac{dx}{x}} \quad \text{Lösung der DGL für } u(x) \quad y = x\cdot u(x)$\\
+Anwendung Beispiel&
+$y' = \dfrac{y}{x} - \dfrac{x^2}{y^2} \quad A(u) = u - \dfrac{1}{u^2} \quad u' = \dfrac{A(u) - u}{x} = -\dfrac{1}{u^2\cdot x} $\newline 
+$-\int u^2 du = \int \dfrac{1}{x} \quad -\dfrac{u^3}{3} = ln|x|+C \quad y(x) = x \cdot u(x) = x\cdot (C -3\ln|x| )^{1/3}$
+\\

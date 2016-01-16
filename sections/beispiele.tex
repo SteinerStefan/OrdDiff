@@ -1,18 +1,34 @@
 \section{Beispiele}
- 
+ \renewcommand{\arraystretch}{2}
 
 \begin{tabularx}{\columnwidth}{p{2.5cm} X}
 	\hline 
+	\multicolumn{2}{c}{\textbf{Modellbildung}}\\
+	\hline 
+	\input{sections/uebungen/Fadenpendel}	
+	\hline 
 	\multicolumn{2}{c}{\textbf{Gewöhliche Differentialgleichungen }}\\
+	\hline 
 	\multicolumn{2}{c}{1. Ordnung}\\
-	Lösung durch Substitution & 
-	$y' = A\left(\dfrac{y}{x}\right) = A(u) \quad \text{subst.}\quad u(x) = \dfrac{y}{x} \quad u' = \dfrac{x\cdot y'-y\cdot1}{x^2} = \dfrac{y'-u}{x} $ \newline 
-	$y' = x\cdot u' +u = A(u)  \quad u' = \dfrac{A(u)-u}{x} \quad \text{separierbar!}$ \newline 
-	$\boxed{\int\dfrac{du}{A(u) - u} = \int \dfrac{dx}{x}} \quad \text{Lösung der DGL für } u(x) \quad y = x\cdot u(x)$\\
-	Anwendung Beispiel&
-	$y' = \dfrac{y}{x} - \dfrac{x^2}{y^2} \quad A(u) = u - \dfrac{1}{u^2} \quad u' = \dfrac{A(u) - u}{x} = -\dfrac{1}{u^2\cdot x} $\newline 
-	$-\int u^2 du = \int \dfrac{1}{x} \quad -\dfrac{u^3}{3} = ln|x|+C \quad y(x) = x \cdot u(x) = x\cdot (C -3\ln|x| )^{1/3}$
+	\hdashline
+	\input{sections/uebungen/substitution}
+	\hdashline
+	\multicolumn{2}{c}{lineare DGL mit konstanten Koeffizienten}\\
+	\hdashline
+	\input{sections/uebungen/schwingungsprobleme}
+	\hline 
+	\multicolumn{2}{c}{\textbf{Systeme von Differentialgleichungen}}\\
+	\hline 
+	\input{sections/uebungen/komplEW}
+	\input{sections/uebungen/mfacheEW}
+	\hline 
+	\multicolumn{2}{c}{\textbf{Dynamische Systeme}}\\
+	\hline
+	\input{sections/saddle_node}
+	\input{sections/pitchfork}
+	\hdashline 
 	
-	
-	\\
 \end{tabularx} 
+
+
+
